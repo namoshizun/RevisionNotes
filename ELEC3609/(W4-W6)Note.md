@@ -26,16 +26,16 @@
 
 ### **Concepts:**
 
-**XML**: Extensible Markup language, is a <u>markup language</u> defines a set of rules for encoding documents. 
+**XML**: Extensible Markup language, is a <u>markup language</u> defines a set of <u>rules</u> for encoding documents. 
 
-**DTD**: Document Type Definition; is a set of markup declarations that define a document type for an SGML-family markup language (XML, HTML...).
+**DTD**: Document Type Definition; is a <u>set of markup declarations</u> that define a document type for an SGML-family markup language (XML, HTML...).
 
 ```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML4.01//EN" "..."> 
-<!-- This is an (incomplete) example of telling the browser to use HTML4, and therefore HTML4 DTD is used to check html validity -->
+<!-- This is an (incomplete) example of telling the browser to use HTML4 for validating the documentation content -->
 ```
 
-**JSON**: JavaScript Object Notation is a language-independent data encoding structure. Useful for API communications and [Serialisation](https://en.wikipedia.org/wiki/Serialization) (converting object into byte string).
+**JSON**: JavaScript Object Notation is a language-independent data encoding structure. Useful for <u>***API communications***</u> and [**<u>*Serialisation*</u>**](https://en.wikipedia.org/wiki/Serialization) (converting object into byte string for storage and transmission).
 
 ### **HTTP Anatomy**:
 
@@ -44,12 +44,12 @@
 - <u>Syntax</u>: type/subtype  <= defined in '***Content-Type' header***
 - <u>Common ones</u>: text/html, application/json, image/png
 
-**Referer**: tell the server how a browser arrived at a particular page.
+**Referer**: tell the server how a browser arrived at a particular page <= can be used to block access directed from unwanted referers. 
 
 **User-Agent**: tells the server what type of software the client is using. 
 
 * *Syntax*:  [ Browser, Rendering Engine, OS ]
-* Why? the server knows which content to choose to respond. 
+* Why? the server knows which content to choose to respond, e.g, display Chinese content if user's OS language is Chinese 😀. 
 
 **Cookies**: a small piece of temp data stored in the user's browser. 
 
@@ -75,7 +75,7 @@
 
 **Bower** - a package manager for the web <= similar to pip
 
-**Grunt** - a Javascript task runner; does repetitive tasks such as bundle and build  <= similar to makefile
+**Grunt** - a Javascript task runner to automate the execution of (especially) repetitive tasks such as migrating, bundling and transpiling  <= similar to makefile and gulp
 
 **Single Page Application**: HTML is loaded once and all updates are done via manipulation to DOM using Js !! 
 
@@ -83,4 +83,6 @@
 
 * **Cons**: harder to implement & may increase security risks & add burdens to browser & Slower initial page load & ***<u>SEO problem</u>*** (Google crawler only recognises the homepage and ignores the dynamically loaded components by Js)
 
-  See this [post](http://adkgroup.com/insights/single-page-applications-spa-and-seo-problem) for why SEO problem is a major drawback 
+  See this [post](http://adkgroup.com/insights/single-page-applications-spa-and-seo-problem) for why SEO problem is a serious drawback 
+
+  ~>>>>  Now Google Crawler can do better in analysing AJAX websites, but still SEO problem can exist if website is designed regardless Google's recommended enhancement on SEO <<<<~

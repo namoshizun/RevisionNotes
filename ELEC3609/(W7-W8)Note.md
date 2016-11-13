@@ -12,9 +12,9 @@
 
 ##### **Types of Conflicts**
 
-* **Merge conflict** == Developers have modified the same file concurrently
+* **Merge conflict** == Developers have modified the same file concurrently, i.e, ''You code overrides my code!!!'
 * **Logical conflict** == … such that the resulting system does not compile, i.e, 'You broke my code!!'
-* **Functional conflict** == … such that the system does not execute successfully, i.e, 'Your code does not work with my code!!'
+* **Functional conflict** == … such that the system does not execute successfully, i.e, 'Our code don't do things properly !!'
 
 ##### **Mitigations**
 
@@ -26,9 +26,10 @@
 
 ##### **Benefits**
 
-1. ***Avoid 'stale branches'*** <= less chance of massive code rebasing
-2. ***Small bugs are checked early***, and it's cheaper to rollback to a latest bug free state where only a small set of changes are lost.
-3. Invisibly pushes developers to create ***modular, functional, quality and less complex code***
+1. ***Avoid 'stale branches'*** <= shorter span of time staying checked out; less chance of massive code rebasing
+2. **Project is always available and functional** <= the HEAD state
+3. ***Small bugs are checked early***, and it's cheaper to rollback to a latest bug free state where only a small set of changes are lost.
+4. Invisibly pushes developers to create ***modular, functional, quality and less complex code***
 
 ##### <u>How to be CI?</u>
 
@@ -47,7 +48,7 @@
 
 **Building (not just compling)**
 
-* **Backend**: Optimising the autoloader + Pre-populating caches + Pre-redering templates + Vendoring dependencies
+* **Backend**: Optimising the autoloader + Pre-populating caches + Pre-rendering templates + Vendoring dependencies
 * **Frontend**: Bundling assets + Minifying images + Minifying codes + Transpiling Js (e.g, convert ES6 to ES5 for better browser compatibility) 
 
 **Testing**
@@ -67,13 +68,11 @@
 
 # Linux, Networking, and 'THE CLOUD'
 
-## Linux
-
->  an *open source* <u>UNIX-like</u> operating system
+>  Linux is an *open source* <u>UNIX-like</u> operating system
 
 **Linux Distribution**: is a collection of software that comes *pre-packaged* as a complete operating system.We all use distributions, not directly operating on the plain kernel … 
 
-**User**: anyone who uses the system, is part of the access control
+**User**: anyone who uses the system; is part of the access control
 
 * **/etc/passwd**: text-based database of information about users that may log into the system, *each describing* username, group id, *<u>information used to validate a user's password (can be just password hash or some other hint on  HOW password should be validated)</u>*, home dir, and startup executable… 
 * **/etc/shadow**: stores sensitive password information (e.g, password hashes), only owned by superuser.
@@ -105,11 +104,11 @@
 
 **EC2**: Elastic Compute Cloud provides access to *server '**instances**'*.
 
-**EBS**: Elastic Block Store provides ***hard drives*** or 'volumes'* that can be *attached* to EC2 instances <= a good choice to have a separate place *for data storage* (so data loss even if instances fail)
+**EBS**: Elastic Block Store provides ***hard drives*** or 'volumes' that can be *attached* to EC2 instances <= a good choice to have a separate place *for data storage* (so data loss even if instances fail)
 
 **VPC**: Virtual Private Cloud enables greater ***control and network segregation*** for your EC2 instances. 
 
-**AZ**: Availability Zones
+**AZ**: Availability Zones  < = each AZ is separated but connected using low latency connection; so servers should be chosen to locate closely to each other.
 
 <img src="AZ.png" height="50%" width="50%">
 

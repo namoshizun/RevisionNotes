@@ -6,9 +6,17 @@
 
 * **IaaS**: Infrastructure as Service (hosting)
 * **PaaS**: Platform as Service (building). Eg, AWS Relational Database Service. 
-* **SaaS**: Software as Service (consuming). Everything above are combined in this. 
+* **SaaS**: Software as Service (consuming). Everything above are combined in this. Full stack. 
 
-TO BE CONTINUED … (If I have time 😁)
+**Why Clouding??**
+
+| PROS                               | CONS                                     |
+| ---------------------------------- | ---------------------------------------- |
+| Easy to run and maintain           | Data security                            |
+| Reliable/scalable storage/hardware | Maturity of Cloud Products (潜在之坑)        |
+| CHEAPPPPPPPERRRRRRR                | Comparing cost between providers is difficult |
+
+
 
 
 # Web Security
