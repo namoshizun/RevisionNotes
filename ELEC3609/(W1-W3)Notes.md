@@ -1,6 +1,12 @@
-# **Concepts**:
+# **Web Fundamentals**:
 
-**DHCP**: Dynamic Host Configuration Protocol;
+## What happens when you enter a url into the browser?<img src="Overview.png">
+
+ <img src="Analogy.png" height="80%" width="80%">
+
+## Concepts
+
+**URL**: Uniform Resource Locator <= protocol://domain.tld/path/file.ext
 
 **IP**: Internet Protocol;
 
@@ -10,23 +16,21 @@
 
 **UDP**: User Datagram Protocol - port 53;
 
-**TCP**: Transmission Control Protocol
+**TCP**: Transmission Control Protocol. It is used by other protocols such as FTP, HTTP and SMTP (sort of like trucks [TCP] carrying some loads[XXP] on a highway[IP])
 
-**DDoS Mitigation Services**
+**App Servers**: handles *processing* of HTTP requests **[** Backend website code + Business Logic + Database interface methods + Caching Layers.**]**. Different from Web Server which normally runs web softwares such as Nginx and  handles just the *reception* of HTTP requests
 
-**App Servers**: handles processing of HTTP requests **[** Backend website code + Business Logic + Database interface methods + Caching Layers.**]**
+* Backend programming language + framework lies here
+* Business Logic is defined and maintained here (if not SPA web architecture)
+* Database Interface Methods
+* Caching Layers
 
-**Master <=> Slaves**: Write to master <=> Read from slaves [ Improving parallelizability of DB reads]
+**Web Browser**:
 
-- **Issue**: **[**Slave drift: time delay between W & R, Race Condition**]**
-
-**DOM**: Document Object Model
-
-**HTML**: Hyper Text Markup Language
-
-**CSS**: Cascading Style Sheets
-
-**Browser Rendering**: done by web browser engines, e.g, WebKit of Safari
+* **DOM**: Document Object Model
+* **HTML**: Hyper Text Markup Language
+* **CSS**: Cascading Style Sheets
+* **Browser Rendering**: done by web browser engines, e.g, WebKit of Safari
 
 ---
 
@@ -76,25 +80,24 @@ One of the most common stack: LAMP
 
 **What's in a Use Case Documentation**:
 
-<img src="UseCase.png" height="65%" width="65%">
+<img src="UseCase.png" height="70%" width="70%">
 
 **Sequence Diagram**: 
 
-* Useful for communicating how serveral systems interact.
+* Useful for communicating how serveral systems interact <= focus on entities and orders of interactions. 
 * Shows how objects operate with another by time sequence. 
 
 **State & Flow Diagram**:
 
-* Useful for communicating how abstract concepts progress through the system
-* Explain a state machine.
+* Useful for communicating how abstract concepts progress through the system. <= focus on state transitions; explains a state machine
 
 **SRS**: 
 
 * Specifies the scope of the project <= checks when project is finished & prevents scope creep. 
 * <u>Components</u>:
-  * Introduction: business recognition; overall assessment of the project necessity
-  * Overall Description: System structure (brief) + Dependencies + Constraints
-  * Specific Requirements: Functional & Non-Functional requirements + other highly granular requirements. 
+  * **Introduction**: business recognition; overall assessment of the project necessity
+  * **Overall Description**: System structure (brief) + Dependencies + Constraints
+  * **Specific Requirements**: Functional & Non-Functional requirements + other highly granular requirements. 
 
 # **Web Servers and Application Architecture**
 
@@ -102,14 +105,14 @@ One of the most common stack: LAMP
 
 > [What is the difference between application server and web server????](http://stackoverflow.com/questions/936197/what-is-the-difference-between-application-server-and-web-server)
 
-##### **Two Ubiquitous Stacks**
+##### **Common Stacks**
 
-| LAMP       | LEMP      |
-| ---------- | --------- |
-| Linux      | Linux     |
-| **Apache** | **Nginx** |
-| MySQL      | MySQL     |
-| PHP        | PHP       |
+| LAMP       | LEMP      | mean       |
+| ---------- | --------- | :--------- |
+| Linux      | Linux     | MongoDB    |
+| **Apache** | **Nginx** | Express.Js |
+| MySQL      | MySQL     | Angular.Js |
+| PHP        | PHP       | Node.Js    |
 
 **ASP**: Active Server Pages
 
@@ -120,15 +123,17 @@ One of the most common stack: LAMP
 
 <img src="WSGI.png" height="50%" width="50%">
 
-**Relational Database**: enforcing and maintaining relationships, MySQL + PostgreSQL + SQLite
+**Relational Database**: enforcing and maintaining relationships, MySQL (most commonly used) + PostgreSQL(complete support for reliable transaction [ACID] )  + SQLite
 
 **Non-relational Database** (NoSQL): storing data like pages,  MongoDB (document based), Redis (K-V based), Cassandara (Column based) …. 
 
 * Redis is useful for rapidly changing data with a foreseeable database size 
 * MongoDB is good for dynamic queries / defining indexes. 
+* ElasticSearch is good for having advanced/fuzzy search
 
-| <img src="SingleServer.png">          | <img src="SeparateDbServer.png">         |
-| ------------------------------------- | ---------------------------------------- |
-| 👆 Web/App/Database Server all in ONE | 👆 Increase security; No contention  by App Server; But more complex and less independent on network connection |
-| <img src="LoadBalancer.png">          | 👈  Useful for horizontal scaling; Imposing a single point of failure; LB can become the performance bottleneck; |
-| <img src="SlaveMasterServer.png">     | 👈 Brings great performance Improvement on database system that performs <u>many reads compared to writes</u>; Additional attention to asynchronous issues |
+| <img src="SingleServer.png">             | <img src="SeparateDbServer.png">         |
+| ---------------------------------------- | ---------------------------------------- |
+| 👆 Web/App/Database Server all in ONE; The simplest form | 👆 Increase security; No resource contention  with App Server; But more complex and less independent on network connection |
+| <img src="LoadBalancer.png">             | 👈  Useful for horizontal scaling; Imposing a single point of failure; LB can become the performance bottleneck; |
+| <img src="HttpAccelerator.png">          | 👈 Response are cached for a period of time in HAS, which can increase web performance (if caching is tuned properly :0 ); Imposing a single point of failure |
+| <img src="SlaveMasterServer.png">        | 👈 Brings great performance Improvement on database system that performs <u>many reads compared to writes</u> (i,em improve database parallelizability of READ); Additional attention to asynchronous issues (e.g, slave drift) |

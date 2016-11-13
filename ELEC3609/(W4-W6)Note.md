@@ -1,14 +1,16 @@
 # Backend Web Development
 
+> Omitted topics: Version Control System (VCS); Python Package Manager (pip); Virtual Environments; Text Editors; Integrated Development Environment (IDE)
+
 #### **Data modelling**:
 
 **Keywords**: data modelling, normalisation, ERD(entity-relationship model)
 
-**Process**: Identifying the detailed system requirements 👉 [Normalising](https://en.wikipedia.org/wiki/Database_normalization) the entities 👉 Writing the [data model](https://en.wikipedia.org/wiki/Data_model) 
+**Process of creating a formalised ERD (Entity-relationship model)**: Identifying the detailed system requirements 👉 [Normalising](https://en.wikipedia.org/wiki/Database_normalization) the entities 👉 Writing the [data model](https://en.wikipedia.org/wiki/Data_model) 
 
 **Model**: describes the fields which hold information about a particular entity. Typically, each model has a unique key known as the <u>primary key</u>. 
 
-*  Relationships: One <=> One / One <=> Many / Many <=> Many
+*  Relationships: One <=> One / One <=> Many / Many <=> Many (intermediate table is used for representation, in which the primary key is a tuple of PKs from each table)
 
 **MVC Design Pattern**:
 
@@ -16,7 +18,9 @@
 * View: renders data into views
 * Controller: interprets requests and encapsulates business logic
 
-**ORM**: [Object-relational mapping](https://en.wikipedia.org/wiki/Object-relational_mapping) is a programming technique for converting data between incompatible type systems in OO programming languages. Models become Classes, and each instance becomes an object, on which methods can be called. 
+**ORM**: [Object-relational mapping](https://en.wikipedia.org/wiki/Object-relational_mapping) is a programming technique for converting data between incompatible type systems in OO programming languages. Models become Classes, fields become class members, and each row becomes an instance on which methods can be called. 
+
+* Systematically block SQL Injection attack 👏
 
 # Client-Server interoperation
 

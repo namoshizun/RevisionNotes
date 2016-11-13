@@ -23,7 +23,7 @@ TO BE CONTINUED … (If I have time 😁)
 
 **What is a 'System'?** Anything from a product/component to infrastructure, applications or users… <= each has its security weaknesses! 
 
-[**OWASP**](https://www.owasp.org/index.php/About_OWASP): these guys are there to educate you why systems are hacked and how to prevent it from happening. 
+[**OWASP**](https://www.owasp.org/index.php/About_OWASP):  (Open Web Application Security) these guys are there to educate you why systems are hacked and how to prevent it from happening. 
 
 ## Vulnerabilities, Vulnerabilities everywhere! 
 
@@ -37,10 +37,10 @@ TO BE CONTINUED … (If I have time 😁)
 
 ## **Password Protection**
 
-**Hashing** is a a common way to <u>*not storing plain text password*</u>s on server to minimise the danger of  password database leakage. 
+**Hashing** is a a common way of <u>*not storing plain text password*</u>s on server to minimise the danger of  password database leakage. 
 
 * **Hash Function**: One way + Unpredictable + Non-collision
-* **Salting**: instead of  H(password), use H(<u>***salt***</u> || password). This makes *pre-computed dictionary (like [Rainbow table](https://www.zhihu.com/question/19790488)) attack* harder as each encrypted password is a result of deviated hashing, so the same dict does not apply for all. 
+* **Salting**: instead of  H(password), use H(<u>***salt***</u> || password). This makes *pre-computed dictionary (like [Rainbow table](https://www.zhihu.com/question/19790488)) attack* harder as each encrypted password is a result of deviated hashing, so the same dict does not apply to all. 
 
 **Authentication Cookies** is a means for post-loggingin authentication. 
 

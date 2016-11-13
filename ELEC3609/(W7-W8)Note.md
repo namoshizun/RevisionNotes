@@ -48,13 +48,13 @@
 **Building (not just compling)**
 
 * **Backend**: Optimising the autoloader + Pre-populating caches + Pre-redering templates + Vendoring dependencies
-* **Frontend**: Bundling assets + Minifying images + Minifying codes + Transpiling Js (e.g, compile ES6 to ES5 for better browser compatibility) 
+* **Frontend**: Bundling assets + Minifying images + Minifying codes + Transpiling Js (e.g, convert ES6 to ES5 for better browser compatibility) 
 
 **Testing**
 
 * **Unit testing**: focus on individual component/function; minimal dependencies
 * **Integrate testing**: focus on whole code base; focus on (high level) APIs
-* **Acceptance testing**: focus on the ability to meet requirements; examine completeness of functionalities
+* **Acceptance testing**: focus on checking the ability to meet requirements; examine completeness of functionalities
 * **Regression testing**: ensure previous bugs do not come back to life. 
 
 **Publishing**: produce end artifacts ready for deployment <= dependent on the tooling you use, e.g, gulp, angular-cli, grunt … 
@@ -75,7 +75,7 @@
 
 **User**: anyone who uses the system, is part of the access control
 
-* **/etc/passwd**: text-based database of information about users that may log into the system, *each describing* username, group id, home dir, and startup executable… 
+* **/etc/passwd**: text-based database of information about users that may log into the system, *each describing* username, group id, *<u>information used to validate a user's password (can be just password hash or some other hint on  HOW password should be validated)</u>*, home dir, and startup executable… 
 * **/etc/shadow**: stores sensitive password information (e.g, password hashes), only owned by superuser.
 * **<u>*Program execute as a particular user !*</u>**
 
@@ -124,4 +124,4 @@
 * auto distribute incoming traffic  amongst multiple instances 
 * audo redirect traffic to working instance if the target is failing … 
 
-**Elastic IPs**: a *<u>consistent</u>* IP address on your EC2 host
+**Elastic IPs**: a *<u>consistent</u>* IP address on your EC2 host (stays the same even after server re-boosting). 
