@@ -84,6 +84,8 @@
 
 ## Secure Shell (SSH)
 
+> [First Few Milliseconds of https](http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html)
+
 <img src="SSHtoit.PNG" height="70%" width="70%">
 
 **SSH Server**: A piece of software listening to TCP <u>*PORT 22*</u> and authenticating connecting users by password/(public or private) keys
